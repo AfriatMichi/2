@@ -13,46 +13,40 @@ interface VideoItem {
 // דוגמאות לסרטונים - בפרויקט אמיתי זה יבוא מ-API של יוטיוב
 const featuredVideos: VideoItem[] = [
   {
-    id: "1",
-    title: "הלכות שבת - מלאכת בישול",
-    description: "שיעור מקיף על דיני בישול בשבת, הכולל הסברים מעמיקים ודוגמאות מעשיות",
-    thumbnail: "/api/placeholder/480/270",
-    duration: "45:30"
+    id: "1g6rqTxY3GE",
+    title: "ר\"ח אב - עין טובה",
+    description: "שיעור בנושא עין טובה שניתן בראש חודש אב.",
+    thumbnail: "https://img.youtube.com/vi/1g6rqTxY3GE/mqdefault.jpg",
+    duration: "19:26"
+  },
+ 
+  {
+    id: "0OX7O8Mo-vk",
+    title: "ברוך שם כבוד מלכותו לעולם ועד | הלכות ברכות",
+    description: "שיעור בנושא הלכות ברכות - ברוך שם כבוד מלכותו לעולם ועד.",
+    thumbnail: "https://img.youtube.com/vi/0OX7O8Mo-vk/mqdefault.jpg",
+    duration: "26:54"
   },
   {
-    id: "2", 
-    title: "אמונה ובטחון - חלק א'",
-    description: "יסודות האמונה והבטחון בהשם יתברך לפי דברי חז\"ל ומחכמי ישראל",
-    thumbnail: "/api/placeholder/480/270",
-    duration: "38:15"
+    id: "NwHKJOpXlLE",
+    title: "טיולים על פי ההלכה",
+    description: "שיעור בנושא טיולים על פי ההלכה.",
+    thumbnail: "https://img.youtube.com/vi/NwHKJOpXlLE/mqdefault.jpg",
+    duration: "20:58"
   },
   {
-    id: "3",
-    title: "משנה ברורה - סימן רמד",
-    description: "לימוד מעמיק במשנה ברורה עם ביאורים והערות חשובות",
-    thumbnail: "/api/placeholder/480/270", 
-    duration: "52:20"
+    id: "tBhZaBy7u7g",
+    title: "האם צריך להוריד שעון בהנחת תפילין?",
+    description: "שיעור הלכתי: האם צריך להוריד שעון מהיד בעת הנחת תפילין?",
+    thumbnail: "https://img.youtube.com/vi/tBhZaBy7u7g/mqdefault.jpg",
+    duration: "52:22"
   },
   {
-    id: "4",
-    title: "פרשת וישב - דרושים ופירושים",
-    description: "דרושים נפלאים על פרשת וישב עם מסרים מעשיים לחיי היום יום",
-    thumbnail: "/api/placeholder/480/270",
-    duration: "41:45"
-  },
-  {
-    id: "5",
-    title: "הלכות תפילה - כוונת הלב",
-    description: "הדרכה מעשית לתפילה בכוונה ובהתרכזות",
-    thumbnail: "/api/placeholder/480/270",
-    duration: "35:10"
-  },
-  {
-    id: "6",
-    title: "חזון איש - הלכות ומנהגים",
-    description: "לימוד בספר חזון איש עם הסברים ויישומים הלכתיים",
-    thumbnail: "/api/placeholder/480/270",
-    duration: "47:25"
+    id: "9IM1Q_uj7Hs",
+    title: "הלכות שניים מקרא ואחד תרגום",
+    description: "שיעור בנושא הלכות שניים מקרא ואחד תרגום.",
+    thumbnail: "https://img.youtube.com/vi/9IM1Q_uj7Hs/mqdefault.jpg",
+    duration: "22:36"
   }
 ];
 
