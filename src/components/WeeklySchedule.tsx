@@ -24,7 +24,7 @@ const scheduleData: ScheduleItem[] = [
   },
   {
     day: "ראשון",
-    time: "20:40",
+    time: "20:41",
     topic: "כולל ערב",
     location: "בית הכנסת נווה רחמים"
   },
