@@ -52,8 +52,7 @@ const featuredVideos: VideoItem[] = [
 
 const YouTubeSection = () => {
   const handleVideoClick = (videoId: string) => {
-    // בפרויקט אמיתי זה יפתח את הסרטון ביוטיוב
-    window.open(`https://youtube.com/@nachalatefraim2339`, '_blank');
+    window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
   };
 
   const handleChannelClick = () => {
