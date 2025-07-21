@@ -144,6 +144,23 @@ const scheduleData: ScheduleItem[] = [
   }
 ];
 
+// Group scheduleData by day
+const groupedSchedule = scheduleData.reduce<Record<string, ScheduleItem[]>>((acc, item) => {
+  if (!acc[item.day]) acc[item.day] = [];
+  acc[item.day].push(item);
+  return acc;
+}, {});
+
+const dayOrder = [
+  "ראשון",
+  "שני",
+  "שלישי",
+  "רביעי",
+  "חמישי",
+  "שישי",
+  "שבת"
+];
+
 const WeeklySchedule = () => {
   return (
     <div className="w-full">
@@ -157,31 +174,33 @@ const WeeklySchedule = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {scheduleData.map((item, index) => (
+        {dayOrder.filter(day => groupedSchedule[day]).map(day => (
           <Card 
-            key={index} 
+            key={day} 
             className="group hover:shadow-2xl transition-all duration-300 border-border/50 hover:border-primary/30 bg-gradient-to-br from-card to-secondary/20"
           >
             <CardHeader className="pb-3">
               <CardTitle className="text-xl font-bold text-primary group-hover:text-primary-glow transition-colors duration-300 text-center">
-                {item.day}
+                {day}
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-right">
-              <div className="flex items-center gap-2 text-foreground justify-end">
-                <span className="font-medium">{item.time}</span>
-                <Clock className="h-4 w-4 text-golden" />
-              </div>
-              
-              <div className="flex items-start gap-2 text-foreground justify-end">
-                <span className="font-medium leading-tight">{item.topic}</span>
-                <BookOpen className="h-4 w-4 text-golden mt-0.5 flex-shrink-0" />
-              </div>
-              
-              <div className="flex items-start gap-2 text-muted-foreground justify-end">
-                <span className="text-sm leading-tight">{item.location}</span>
-                <MapPin className="h-4 w-4 text-golden mt-0.5 flex-shrink-0" />
-              </div>
+            <CardContent className="space-y-4 text-right">
+              {groupedSchedule[day].map((item, idx) => (
+                <div key={idx} className="border-b last:border-b-0 pb-2 last:pb-0 mb-2 last:mb-0">
+                  <div className="flex items-center gap-2 text-foreground justify-end">
+                    <span className="font-medium">{item.time}</span>
+                    <Clock className="h-4 w-4 text-golden" />
+                  </div>
+                  <div className="flex items-start gap-2 text-foreground justify-end">
+                    <span className="font-medium leading-tight">{item.topic}</span>
+                    <BookOpen className="h-4 w-4 text-golden mt-0.5 flex-shrink-0" />
+                  </div>
+                  <div className="flex items-start gap-2 text-muted-foreground justify-end">
+                    <span className="text-sm leading-tight">{item.location}</span>
+                    <MapPin className="h-4 w-4 text-golden mt-0.5 flex-shrink-0" />
+                  </div>
+                </div>
+              ))}
             </CardContent>
           </Card>
         ))}
