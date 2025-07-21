@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, Star, Heart } from "lucide-react";
 
 const Index = () => {
+  const handleScroll = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/30">
       {/* Hero Section */}
@@ -29,6 +33,7 @@ const Index = () => {
             <Button 
               size="lg"
               className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => handleScroll('weekly-schedule')}
             >
               לוח השיעורים השבועי
             </Button>
@@ -36,6 +41,7 @@ const Index = () => {
               variant="outline"
               size="lg"
               className="border-2 border-golden hover:bg-golden hover:text-foreground font-semibold px-8 py-4 rounded-full transition-all duration-300"
+              onClick={() => handleScroll('youtube-section')}
             >
               <Heart className="mr-2 h-5 w-5" />
               ערוץ היוטיוב
@@ -45,7 +51,7 @@ const Index = () => {
       </div>
 
       {/* Weekly Schedule Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section id="weekly-schedule" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <WeeklySchedule />
         </div>
@@ -57,7 +63,7 @@ const Index = () => {
       </div>
 
       {/* YouTube Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section id="youtube-section" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <YouTubeSection />
         </div>
